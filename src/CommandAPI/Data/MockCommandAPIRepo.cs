@@ -3,7 +3,7 @@ using CommandAPI.Models;
 
 namespace CommandAPI.Data
 {
-    public class MockCommandAPIRepo:ICommandAPIRepo
+    public class MockCommandAPIRepo : ICommandAPIRepo
     {
         public void CreateCommand(Command cmd)
         {
@@ -15,7 +15,7 @@ namespace CommandAPI.Data
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Command>GetAllCommands()
+        public IEnumerable<Command> GetAllCommands()
         {
 
             var commands = new List<Command>
@@ -42,9 +42,10 @@ namespace CommandAPI.Data
             return new Command
 
             {
-                Id=0, HowTo="How to generate a migration",
-                CommandLine="dotnet ef migrations add <Name of Migration>",
-                Platform=".Net Core EF"
+                Id = 0,
+                HowTo = "How to generate a migration",
+                CommandLine = "dotnet ef migrations add <Name of Migration>",
+                Platform = ".Net Core EF"
             };
         }
 
