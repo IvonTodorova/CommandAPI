@@ -29,7 +29,7 @@ namespace CommandAPI.Data
             }
             _context.CommandItems.Remove(cmd);
         }
-        }
+        
 
         public IEnumerable<Command> GetAllCommands()
         {
@@ -50,5 +50,6 @@ namespace CommandAPI.Data
             throw new System.NotImplementedException();
             
         }
+
     }
 }
