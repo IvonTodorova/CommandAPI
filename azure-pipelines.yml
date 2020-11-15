@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+- main
 
 pool:
   vmImage: 'windows-latest'
@@ -16,6 +16,9 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+- task: UseDotNet@2
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: NuGetCommand@2
   inputs:
