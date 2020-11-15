@@ -7,10 +7,11 @@ using CommandAPI.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 namespace CommandAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CommandsController : ControllerBase
     {
+        //Random change
         private readonly ICommandAPIRepo _repository;
         private readonly IMapper _mapper;
         public CommandsController(ICommandAPIRepo repository,IMapper mapper)
