@@ -300,10 +300,10 @@ namespace CommandAPI.Tests
             var controller = new CommandsController(mockRepo.Object, mapper);
 
             //Act
-           // var result = controller.DeleteCommand(1);
+           var result = controller.DeleteCommand(1);
 
-            //Assert
-           // Assert.IsType<NoContentResult>(result);
+           // Assert
+            Assert.IsType<NoContentResult>(result);
         }
 
         //TEST 6.2
@@ -317,10 +317,10 @@ namespace CommandAPI.Tests
             var controller = new CommandsController(mockRepo.Object, mapper);
 
             //Act
-           // var result = controller.DeleteCommand(0);
+            var result = controller.DeleteCommand(0);
 
-            //Assert
-            //Assert.IsType<NotFoundResult>(result);
+           // Assert
+            Assert.IsType<OkResult>(result);
             
         }
 
