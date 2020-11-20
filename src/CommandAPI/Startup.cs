@@ -25,7 +25,7 @@ namespace CommandAPI
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             var builder = new NpgsqlConnectionStringBuilder();
             builder.ConnectionString =
             Configuration.GetConnectionString("PostgreSqlConnection");
@@ -44,6 +44,7 @@ namespace CommandAPI
             // services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,CommandContext context)
