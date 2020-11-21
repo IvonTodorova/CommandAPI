@@ -30,7 +30,7 @@ namespace CommandAPI
             builder.ConnectionString =
             Configuration.GetConnectionString("PostgreSqlConnection");
             builder.Username = Configuration["UserID"];
-            builder.Password = Configuration["komandir"];
+            builder.Password = Configuration["password"];
 
             services.AddDbContext<CommandContext>
             (opt => opt.UseNpgsql(builder.ConnectionString));
@@ -44,7 +44,7 @@ namespace CommandAPI
             // services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
-            
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,CommandContext context)
